@@ -1,8 +1,6 @@
-import * as type from '../types';
-
-export function incrementpage(numpage) {
-    return { 
-      type: 'INCREMENT_NUMPAGE',
-      payload: numpage,
-    }
-  }
+export function incrementPage(numPage) {
+  return {
+    type: "INCREMENT_NUMPAGE",
+    payload: numPage,
+  };
+}

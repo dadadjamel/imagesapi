@@ -1,26 +1,18 @@
-import axios from 'axios';
-import * as type from '../types';
+import axios from "../../config/axios";
 
-// export function getImages(images) {
-//   return { 
-//     type: type.GET_IMAGES,
-//     payload: images,
-//   }
-// }
-
-export const fetchImages = () => {
+export const fetchImagesThunk = () => {
   return async (dispatch, getState) => {
-
-    dispatch({ type: 'FETCH_IMAGES_REQUEST' })
+    // Set loading to true
+    dispatch({ type: "FETCH_IMAGES_REQUEST" });
 
     try {
-      
-      const response = await axios.get(`https://picsum.photos/v2/list?page=${getState.numpage}&limit=15`)
-      dispatch({ type: 'FETCH_IMAGES_SUCCESS', payload: response.data })
-
+      const response = await axios.get(
+        `/list?page=${getState().numPage}&limit=15`
+      );
+      dispatch({ type: "FETCH_IMAGES_SUCCESS", payload: response.data });
     } catch (error) {
-      dispatch({ type: 'FETCH_IMAGES_FAILURE' })
-
+      // Set error
+      dispatch({ type: "FETCH_IMAGES_FAILURE" });
     }
-  }
-}
+  };
+};

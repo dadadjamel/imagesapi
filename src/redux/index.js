@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux';
-import images from './reducers/images';
-import numpage from './reducers/numpage';
+import { combineReducers } from "redux";
+import images from "./reducers/images";
+import numPage from "./reducers/numPage";
 
 const rootReducer = combineReducers({
-    images: images,
-    numpage: numpage,
+  images,
+  numPage,
 });
 
 export default rootReducer;
