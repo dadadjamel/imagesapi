@@ -1,8 +1,15 @@
-.app__images{
-  margin: auto;
-  width: 80%;
+.app{
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.app__images{
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }

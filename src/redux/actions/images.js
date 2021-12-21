@@ -12,7 +12,7 @@ export const fetchImagesThunk = () => {
       dispatch({ type: "FETCH_IMAGES_SUCCESS", payload: response.data });
     } catch (error) {
       // Set error
-      dispatch({ type: "FETCH_IMAGES_FAILURE" });
+      dispatch({ type: "FETCH_IMAGES_FAILURE", payload: error.message });
     }
   };
 };

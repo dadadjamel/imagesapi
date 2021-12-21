@@ -23,7 +23,12 @@ export default function images(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        error: action.error,
+        error: action.payload,
+      };
+    case "SEARCH":
+      return {
+        ...state,
+        items : state.items.filter(item => item.author == action.payload)
       };
     default:
       return state;
